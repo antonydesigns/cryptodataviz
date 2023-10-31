@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Crypto Data Visualization | by Ant",
@@ -16,7 +14,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+        <nav className="flex gap-3">
+          <Link href="/">Home</Link>
+          <Link href="/dollar-cost-averaging">DCA</Link>
+        </nav>
+        {children}
+      </body>
     </html>
   );
 }
