@@ -1,17 +1,12 @@
-import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Crypto Data Visualization | by Ant",
   description: "Data-driven crypto investment strategies",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className="bg-gray-400">
@@ -30,12 +25,14 @@ export default function RootLayout({
               href="/dollar-cost-averaging"
               className="underline hover:text-sky-800 font-semibold"
             >
-              DCA
+              DCA Simulator
             </Link>
           </nav>
         </div>
 
-        <div className="mx-6 my-6 lg:mx-auto max-w-[1000px]">{children}</div>
+        <div className="mx-6 my-6 lg:mx-auto max-w-[1000px] border">
+          {children}
+        </div>
       </body>
     </html>
   );
