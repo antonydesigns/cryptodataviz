@@ -1,9 +1,14 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import DCAModel from "./DCAModel";
-import DCAChart from "./DCAChart";
+// import DCAChart from "./DCAChart";
 import DCAInputs from "./input-form/DCAInputs";
 import { DCAStore } from "@/app/(zustand)/store";
+import dynamic from "next/dynamic";
+
+const DynamicDCAChart = dynamic(() => import("./DCAChart"), {
+  ssr: false,
+});
 
 export default function DCA() {
   const singlePath = DCAStore((store) => store.csvPath);
@@ -38,7 +43,7 @@ export default function DCA() {
     <>
       <DCAInputs />
 
-      <DCAChart />
+      <DynamicDCAChart />
     </>
   );
 }

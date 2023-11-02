@@ -60,7 +60,7 @@ export default class DCAModel {
     });
 
     this.rawData = output;
-    console.log("DCAModel.js", output);
+    // console.log("DCAModel.js", output);
   }
 
   calculateABP() {
