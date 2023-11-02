@@ -26,7 +26,7 @@ export function join(
   return output;
 }
 
-export function stringToDate(input = "") {
+export function stringToDate(input) {
   const dateString = input;
   const dateParts = dateString.split("/");
 

@@ -27,7 +27,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "app/(pages)/dollar-cost-averaging/DataFetch.jsx",
+    "app/(pages)/dollar-cost-averaging/DCAModel.js",
     "app/(pages)/dollar-cost-averaging/page.jsx",
     "app/(utils)/utils.js",
     "app/layout.jsx",

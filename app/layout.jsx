@@ -9,7 +9,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-gray-400">
+      <body className="bg-[#f7f7f8ec]">
         <div className="header flex flex-col justify-center items-center py-4 border-b border-gray-500">
           <Link href={"/"} className="logo font-bold text-3xl">
             Crypto Data Visualizations
@@ -30,9 +30,7 @@ export default function RootLayout({ children }) {
           </nav>
         </div>
 
-        <div className="mx-6 my-6 lg:mx-auto max-w-[1000px] border">
-          {children}
-        </div>
+        <div className="mx-6 my-6 lg:mx-auto max-w-[1000px] ">{children}</div>
       </body>
     </html>
   );
