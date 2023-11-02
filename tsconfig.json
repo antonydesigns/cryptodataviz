@@ -22,6 +22,18 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "app/(pages)/dollar-cost-averaging/DCAModel.js",
+    "app/(pages)/dollar-cost-averaging/page.jsx",
+    "app/(utils)/utils.js",
+    "app/layout.jsx",
+    "app/(zustand)/store.js",
+    "app/(pages)/(marketing)/(homepage)/page.jsx",
+    "app/(global_components)/Section.jsx"
+  ],
   "exclude": ["node_modules"]
 }

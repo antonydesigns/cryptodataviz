@@ -5,8 +5,8 @@ export default function Home() {
     heading: "Welcome!",
     body: [
       "Blockchain technology brought us Bitcoin, Ethereum, and memecoins! But it also brought a lot of noise and headaches.",
-      "<strong>Crypto Data Viz</strong> is a free online resource where you can explore this space while being guided by human-friendly visuals. It's created to help you make sense of data across various aspects of crypto",
-      "Whether you are a crypto investor or just a curious on-looker, this site offers plenty of charts and simulations to visually explain everything in this crazy world of blockchain and cryptocurrencies!",
+      "<strong>Crypto Data Viz</strong> is a free online resource where you can explore this space while being guided by human-friendly visuals. It's created to help you make sense of data across various aspects of the technology.",
+      "Are you are a crypto investor or just a curious on-looker? This site offers plenty of charts and simulations for everyone!",
     ],
   };
 
