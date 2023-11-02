@@ -58,7 +58,7 @@ export default function Chart() {
 
           labels: {
             formatter: (value) => {
-              return value.toFixed(2);
+              return value?.toFixed(2);
             },
           },
         },
@@ -76,7 +76,7 @@ export default function Chart() {
           },
           labels: {
             formatter: (value) => {
-              return value.toFixed(2);
+              return value?.toFixed(2);
             },
           },
           opposite: true,
