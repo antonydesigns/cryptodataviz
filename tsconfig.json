@@ -33,7 +33,7 @@
     "app/layout.jsx",
     "app/(zustand)/store.js",
     "app/(pages)/(marketing)/(homepage)/page.jsx",
-    "app/(global_components)/Section.jsx"
+    "components/custom/Section.jsx"
   ],
   "exclude": ["node_modules"]
 }

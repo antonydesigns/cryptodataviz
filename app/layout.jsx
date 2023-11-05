@@ -27,6 +27,18 @@ export default function RootLayout({ children }) {
             >
               DCA Simulator
             </Link>
+            <Link
+              href="/rich-text"
+              className="underline hover:text-sky-800 font-semibold"
+            >
+              Rich Text
+            </Link>
+            <Link
+              href="/zod-tutorial"
+              className="underline hover:text-sky-800 font-semibold"
+            >
+              Zod
+            </Link>
           </nav>
         </div>
 

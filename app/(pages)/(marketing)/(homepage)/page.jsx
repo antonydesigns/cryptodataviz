@@ -1,4 +1,4 @@
-import Section from "@/app/(global_components)/Section";
+import Section from "@/components/custom/Section";
 
 export default function Home() {
   const intro = {
