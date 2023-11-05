@@ -21,10 +21,20 @@ export const DCAStore = create((set) => ({
   setAssetSelected: (newAsset) => set(() => ({ assetSelected: newAsset })),
 
   csvPaths: [
-    { ticker: "BTC", path: "/BTC.csv" },
-    { ticker: "ETH", path: "/ETH.csv" },
+    {
+      name: "Bitcoin (BTC)",
+      ticker: "BTC",
+      path: "weekly/BTC.csv",
+      period: "weekly",
+    },
+    {
+      name: "Ethereum (ETH)",
+      ticker: "ETH",
+      path: "weekly/ETH.csv",
+      period: "weekly",
+    },
   ],
 
-  csvPath: "/BTC.csv",
+  csvPath: "weekly/BTC.csv",
   setCsvPath: (newPath) => set(() => ({ csvPath: newPath })),
 }));
