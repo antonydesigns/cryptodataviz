@@ -38,3 +38,24 @@ export const DCAStore = create((set) => ({
   csvPath: "weekly/BTC.csv",
   setCsvPath: (newPath) => set(() => ({ csvPath: newPath })),
 }));
+
+export const EditorStore = create((set) => ({
+  editMode: false,
+  setEditMode: (newStatus) => set(() => ({ editMode: newStatus })),
+  editText: false,
+  setEditText: (newStatus) => set(() => ({ editText: newStatus })),
+}));
+
+export const ContentModel = create((set) => ({
+  model: [
+    { order: 1, content: "<h1>Hello World!</h1>" },
+    {
+      order: 2,
+      content:
+        "<p className='text-red-600'><strong>This</strong> is my first post.</p>",
+    },
+    { order: 3, content: "" },
+    { order: 4, content: "<p>Mamamie</p>" },
+  ],
+  setModel: (updatedState) => set(() => ({ model: updatedState })),
+}));

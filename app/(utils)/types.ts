@@ -12,3 +12,5 @@ export const signUpSchema = z
   });
 
 export type TSignUpSchema = z.infer<typeof signUpSchema>;
+
+export type ParsedHTMLStringType = string | JSX.Element | JSX.Element[];
