@@ -48,14 +48,14 @@ export const EditorStore = create((set) => ({
 
 export const ContentModel = create((set) => ({
   model: [
-    { order: 1, content: "<h1>Hello World!</h1>" },
+    { id: 1, content: "<h1>Hello World!</h1>" },
     {
-      order: 2,
+      id: 2,
       content:
         "<p className='text-red-600'><strong>This</strong> is my first post.</p>",
     },
-    { order: 3, content: "" },
-    { order: 4, content: "<p>Mamamie</p>" },
+    { id: 3, content: "" },
+    { id: 4, content: "<p>Mamamie</p>" },
   ],
   setModel: (updatedState) => set(() => ({ model: updatedState })),
 }));

@@ -12,17 +12,18 @@ export default function Line({
   content,
   id,
   original,
-  locationID,
 }: {
   content: ParsedHTMLStringType;
-  id: string;
+  id: number;
   original: string;
-  locationID: number;
 }) {
   const editMode = EditorStore((store) => store.editMode);
   const [editText, setEdit] = useState(false);
   const editTextGlob = EditorStore((store) => store.editText);
-  const [fieldContent, setFieldContent] = useState();
+
+  const setModel = ContentModel((store) => store.setModel);
+  const model = ContentModel((store) => store.model);
+  const [fieldContent, setFieldContent] = useState(original);
 
   const {
     register,
@@ -37,11 +38,25 @@ export default function Line({
     mode: "all",
   });
 
-  async function onSubmit(data: FieldValues) {}
+  async function onSubmit(data: FieldValues) {
+    const indexToUpdate = model.findIndex(
+      (item: { order: number; content: string }) => item.order === id
+    );
 
-  function handleChange(e: React.FormEvent<HTMLInputElement>) {}
+    if (indexToUpdate !== -1) {
+      const updatedModel = [...model];
+      updatedModel[indexToUpdate] = {
+        order: id,
+        content: getValues("htmlContent"),
+      };
+      setModel(updatedModel);
+    }
+    setEdit(false);
+  }
 
-  console.log(content);
+  function handleChange(e: React.FormEvent<HTMLInputElement>) {
+    setFieldContent(e.currentTarget.value);
+  }
 
   return (
     <>

@@ -1,4 +1,5 @@
 "use client";
+
 import { Switch } from "@/components/ui/switch";
 
 import parse from "html-react-parser";
@@ -7,6 +8,23 @@ import Line from "./Line";
 import { EditorStore } from "@/app/(zustand)/store";
 import { ContentModel } from "@/app/(zustand)/store";
 
+import { db } from "@/app/(config)/firebase";
+import { getDocs, collection } from "firebase/firestore";
+import { useState, useEffect } from "react";
+
+type PageContent = {
+  id: string;
+  content: string;
+  locationID: number;
+};
+
+type ParsedPageContent = {
+  id: string;
+  content: ParsedHTMLStringType;
+  original: string;
+  locationID: number;
+};
+
 export default function Editor() {
   const setEditMode = EditorStore((store) => store.setEditMode);
   const editMode = EditorStore((store) => store.editMode);
@@ -14,30 +32,57 @@ export default function Editor() {
 
   function constructHTML(
     content: {
-      order: number;
+      id: string;
       content: string;
+      locationID: number;
     }[]
   ) {
     let result: {
-      order: number;
+      id: string;
       content: ParsedHTMLStringType;
       original: string;
+      locationID: number;
     }[] = [];
     content.forEach((line) => {
-      let order = line.order;
+      let id = line.id;
       let contentString = line.content;
       let content = parse(contentString);
       let original = contentString;
+      let locationID = line.locationID;
       result.push({
-        order: order,
+        id: id,
         content: content,
         original: original,
+        locationID: locationID,
       });
     });
     return result;
   }
 
-  const parsed = constructHTML(model);
+  const [content, setContent] = useState<PageContent[]>();
+
+  useEffect(() => {
+    (async function getContent() {
+      try {
+        const data = await getDocs(collection(db, "pageContent"));
+        const contentArray: PageContent[] = [];
+        data.forEach((doc) => {
+          let content = doc.data() as PageContent;
+          let id = doc.id;
+          contentArray.push({ ...content, id: id });
+        });
+        setContent(contentArray);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, []);
+
+  let parsed: ParsedPageContent[] = [];
+
+  useEffect(() => {
+    //parsed = content ? constructHTML(content) : [];
+  }, [content]);
 
   return (
     <>
@@ -49,14 +94,16 @@ export default function Editor() {
           }}
         />
       </div>
-      {parsed.map((line) => (
-        <Line
-          key={line.order}
-          content={line.content}
-          id={line.order}
-          original={line.original}
-        />
-      ))}
+      {content &&
+        parsed.map((line) => (
+          <Line
+            key={line.id}
+            content={line.content}
+            id={line.id}
+            original={line.original}
+            locationID={line.locationID}
+          />
+        ))}
     </>
   );
 }
