@@ -9,7 +9,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className="bg-[#f7f7f8ec]">
+      <body className="bg-[#f7f7f8ec] min-h-[100vh]">
         <div className="header flex flex-col justify-center items-center py-4 border-b border-gray-500">
           <Link href={"/"} className="logo font-bold text-3xl">
             Crypto Data Visualizationss
@@ -26,6 +26,12 @@ export default function RootLayout({ children }) {
               className="underline hover:text-sky-800 font-semibold"
             >
               DCA Simulator
+            </Link>
+            <Link
+              href="/editor"
+              className="underline hover:text-sky-800 font-semibold"
+            >
+              Editor
             </Link>
           </nav>
         </div>

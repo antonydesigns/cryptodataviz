@@ -21,10 +21,42 @@ export const DCAStore = create((set) => ({
   setAssetSelected: (newAsset) => set(() => ({ assetSelected: newAsset })),
 
   csvPaths: [
-    { ticker: "BTC", path: "/BTC.csv" },
-    { ticker: "ETH", path: "/ETH.csv" },
+    {
+      name: "Bitcoin (BTC)",
+      ticker: "BTC",
+      path: "weekly/BTC.csv",
+      period: "weekly",
+    },
+    {
+      name: "Ethereum (ETH)",
+      ticker: "ETH",
+      path: "weekly/ETH.csv",
+      period: "weekly",
+    },
   ],
 
-  csvPath: "/BTC.csv",
+  csvPath: "weekly/BTC.csv",
   setCsvPath: (newPath) => set(() => ({ csvPath: newPath })),
 }));
+
+/* export const EditorStore = create((set) => ({
+  editMode: false,
+  setEditMode: (newStatus) => set(() => ({ editMode: newStatus })),
+  editText: false,
+  setEditText: (newStatus) => set(() => ({ editText: newStatus })),
+}));
+
+export const ContentModel = create((set) => ({
+  model: [
+    { id: 1, content: "<h1>Hello World!</h1>" },
+    {
+      id: 2,
+      content:
+        "<p className='text-red-600'><strong>This</strong> is my first post.</p>",
+    },
+    { id: 3, content: "" },
+    { id: 4, content: "<p>Mamamie</p>" },
+  ],
+  setModel: (updatedState) => set(() => ({ model: updatedState })),
+}));
+ */
