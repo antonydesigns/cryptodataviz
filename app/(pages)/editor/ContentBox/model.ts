@@ -2,7 +2,6 @@ import { db } from "@/app/(config)/firebase";
 import { getDocs, collection } from "firebase/firestore";
 import parse from "html-react-parser";
 import type { ParsedHTMLStringType } from "@/app/(utils)/types";
-import { ContentBoxStore } from "./store";
 
 type PageContentType = {
   id: string;
@@ -19,24 +18,20 @@ type ParsedPageContentType = {
 
 export default class ContentBoxModel {
   unparsed: PageContentType[] = [];
+  rawData: PageContentType[] = [];
+  content: ParsedPageContentType[] = [];
+  dataAvailable = false;
 
-  // Global Getters
-  rawData: PageContentType[] = ContentBoxStore((store) => store.rawData);
-  content: ParsedPageContentType[] = ContentBoxStore((store) => store.content);
-  dataAvailable: boolean = ContentBoxStore((store) => store.dataAvailable);
-
-  // Global Setters
-  setRawData = ContentBoxStore((store) => store.setRawData);
-  setContent = ContentBoxStore((store) => store.setContent);
-  setDataAvailable = ContentBoxStore((store) => store.setDataAvailable);
-
-  init() {
+  async init(): Promise<void> {
     if (!this.dataAvailable) {
-      (async () => {
+      try {
         await this.getContent();
         this.constructHTML();
-        this.setDataAvailable(true);
-      })();
+        this.dataAvailable = true;
+      } catch (error) {
+        console.error("Error initializing model:", error);
+        throw error; // Propagates the error to the caller
+      }
     } else {
       console.error("Model already initialized");
     }
@@ -51,10 +46,11 @@ export default class ContentBoxModel {
         let id = doc.id;
         pageContent.push({ ...content, id: id });
       });
-      this.setRawData(pageContent);
+      this.rawData = pageContent;
       this.unparsed = pageContent;
     } catch (error) {
       console.log(error);
+      throw error;
     }
   }
 
@@ -74,6 +70,6 @@ export default class ContentBoxModel {
         locationID: locationID,
       });
     });
-    this.setContent(result);
+    this.content = result;
   }
 }
