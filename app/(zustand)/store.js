@@ -39,7 +39,7 @@ export const DCAStore = create((set) => ({
   setCsvPath: (newPath) => set(() => ({ csvPath: newPath })),
 }));
 
-export const EditorStore = create((set) => ({
+/* export const EditorStore = create((set) => ({
   editMode: false,
   setEditMode: (newStatus) => set(() => ({ editMode: newStatus })),
   editText: false,
@@ -59,3 +59,4 @@ export const ContentModel = create((set) => ({
   ],
   setModel: (updatedState) => set(() => ({ model: updatedState })),
 }));
+ */
