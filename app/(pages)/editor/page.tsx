@@ -6,7 +6,7 @@ export default async function EditorPage() {
   return (
     <>
       <ContentBoxComponent content={content} />
-      <p>hellos</p>
+      <p>helloss</p>
     </>
   );
 }
