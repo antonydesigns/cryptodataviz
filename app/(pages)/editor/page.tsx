@@ -5,6 +5,7 @@ export default async function EditorPage() {
 
   return (
     <>
+      <p>This is actually the unstable version</p>
       <ContentBoxComponent content={content} />
     </>
   );
