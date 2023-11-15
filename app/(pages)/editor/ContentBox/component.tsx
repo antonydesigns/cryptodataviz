@@ -1,5 +1,5 @@
 import { ParsedPageContentType } from "@/app/(utils)/types";
-import ContentBoxModel from "./model";
+import ContentBoxModel from "../../new-editor/model";
 import ContentBoxView from "./view";
 
 export async function getData(): Promise<ParsedPageContentType[]> {
