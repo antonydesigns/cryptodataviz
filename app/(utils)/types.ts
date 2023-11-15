@@ -21,3 +21,9 @@ export type ParsedPageContentType = {
   original: string;
   locationID: number;
 };
+
+export type PageContentType = {
+  id: string;
+  content: string;
+  locationID: number;
+};
