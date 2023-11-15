@@ -28,10 +28,10 @@ export default function RootLayout({ children }) {
               DCA Simulator
             </Link>
             <Link
-              href="/editor"
+              href="/new-editor"
               className="underline hover:text-sky-800 font-semibold"
             >
-              Editor
+              New Editor
             </Link>
           </nav>
         </div>
