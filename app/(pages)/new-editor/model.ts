@@ -1,31 +1,26 @@
 import { db } from "@/app/(config)/firebase";
 import { getDocs, collection } from "firebase/firestore";
 import parse from "html-react-parser";
-import type { ParsedHTMLStringType } from "@/app/(utils)/types";
-
-type PageContentType = {
-  id: string;
-  content: string;
-  locationID: number;
-};
-
-type ParsedPageContentType = {
-  id: string;
-  content: ParsedHTMLStringType;
-  original: string;
-  locationID: number;
-};
+import type {
+  ParsedPageContentType,
+  PageContentType,
+} from "@/app/(utils)/types";
+import { cache } from "react";
 
 export default class ContentBoxModel {
-  unparsed: PageContentType[] = [];
   rawData: PageContentType[] = [];
   content: ParsedPageContentType[] = [];
   dataAvailable = false;
+  revalidate = 0;
+
+  constructor() {
+    this.getContent = cache(this.getContent.bind(this));
+  }
 
   async init(): Promise<void> {
     if (!this.dataAvailable) {
       try {
-        await this.getContent();
+        await this.getRawData();
         this.constructHTML();
         this.dataAvailable = true;
       } catch (error) {
@@ -37,7 +32,11 @@ export default class ContentBoxModel {
     }
   }
 
-  private async getContent() {
+  async getContent(): Promise<ParsedPageContentType[]> {
+    return this.content;
+  }
+
+  private async getRawData() {
     try {
       const data = await getDocs(collection(db, "pageContent"));
       const pageContent: PageContentType[] = [];
@@ -47,7 +46,6 @@ export default class ContentBoxModel {
         pageContent.push({ ...content, id: id });
       });
       this.rawData = pageContent;
-      this.unparsed = pageContent;
     } catch (error) {
       console.log(error);
       throw error;
@@ -55,7 +53,7 @@ export default class ContentBoxModel {
   }
 
   private constructHTML() {
-    const raw = this.unparsed;
+    const raw = this.rawData;
     let result: ParsedPageContentType[] = [];
     raw.forEach((line) => {
       let id = line.id;
