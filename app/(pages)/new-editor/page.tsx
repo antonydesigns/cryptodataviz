@@ -19,15 +19,3 @@ export default async function NewEditorPage() {
     </>
   );
 }
-
-/* 
-const getItem = cache(async () => {
-  const data = await getDocs(collection(db, "pageContent"));
-  const pageContent: PageContentType[] = [];
-  data.forEach((doc) => {
-    const content = doc.data() as PageContentType;
-    let id = doc.id;
-    pageContent.push({ ...content, id: id });
-  });
-  return pageContent;
-}); */
