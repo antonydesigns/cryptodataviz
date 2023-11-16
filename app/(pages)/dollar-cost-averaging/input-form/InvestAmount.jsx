@@ -13,15 +13,14 @@ export default function InvestAmount() {
   }
 
   return (
-    <div className="my-3">
-      <label>Invest amount per week: </label>
+    <div className="">
       <input
         type="text"
         inputMode="numeric"
         pattern="[0-9]*"
         value={dollar}
         onChange={handleChange}
-        className="border border-black text-center bg-[#f7f7f8ec]"
+        className="border border-black text-center bg-[#f7f7f8ec] text-[18px]"
       />
     </div>
   );

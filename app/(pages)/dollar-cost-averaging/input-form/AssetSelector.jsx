@@ -21,11 +21,16 @@ export default function AssetSelector() {
   return (
     <>
       <select
+        className="p-1 text-[18px]"
         onChange={(e) => setAssetSelected(e.target.value)}
         value={assetSelected}
       >
-        <option value="BTC">Bitcoin (BTC)</option>
-        <option value="ETH">Ethereum (ETH)</option>
+        <option className="text-[18px]" value="BTC">
+          Bitcoin (BTC)
+        </option>
+        <option className="text-[18px]" value="ETH">
+          Ethereum (ETH)
+        </option>
       </select>
     </>
   );

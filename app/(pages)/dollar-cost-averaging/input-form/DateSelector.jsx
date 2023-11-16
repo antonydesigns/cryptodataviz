@@ -10,13 +10,12 @@ export default function DateSelector() {
   return (
     <>
       <div className="inline">
-        <span>DCA investment start date: </span>
         <DatePicker
           selected={date}
           onChange={(d) => setDate(d)}
           monthsShown={2}
           showYearDropdown
-          className="border border-black text-center bg-[#f7f7f8ec]"
+          className="border border-black text-center bg-[#f7f7f8ec] text-[18px]"
         />
       </div>
     </>
