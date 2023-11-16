@@ -36,6 +36,7 @@ export default class ContentBoxModel {
     return this.content;
   }
 
+  // GET ALL
   private async getRawData() {
     try {
       const data = await getDocs(collection(db, "pageContent"));
@@ -51,6 +52,8 @@ export default class ContentBoxModel {
       throw error;
     }
   }
+
+  // GET ALL WHERE
 
   private constructHTML() {
     const raw = this.rawData;

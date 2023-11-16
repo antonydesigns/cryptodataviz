@@ -2,8 +2,8 @@ import { db } from "@/app/(config)/firebase";
 import { ParsedPageContentType } from "@/app/(utils)/types";
 import { getDocs, collection } from "firebase/firestore";
 import { cache } from "react";
-import ContentBoxModel from "./model";
-import NewEditorComponent from "./component";
+import ContentBoxModel from "../../../components/custom/ContentBox/model";
+import Link from "next/link";
 
 export const revalidate = 0; // revalidate the data at every request
 
