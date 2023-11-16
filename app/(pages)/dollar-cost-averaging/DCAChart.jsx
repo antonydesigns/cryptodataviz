@@ -1,7 +1,7 @@
 "use client";
 
 import ReactApexChart from "react-apexcharts";
-import { DCAStore } from "@/app/(zustand)/store";
+import { DCAStore } from "./DCAStore";
 
 export default function Chart() {
   const state = {

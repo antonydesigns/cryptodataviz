@@ -1,5 +1,5 @@
 "use client";
-import { DCAStore } from "@/app/(zustand)/store";
+import { DCAStore } from "../DCAStore";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 

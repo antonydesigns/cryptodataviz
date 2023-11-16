@@ -1,5 +1,5 @@
 "use client";
-import { DCAStore } from "@/app/(zustand)/store";
+import { DCAStore } from "../DCAStore";
 
 export default function InvestAmount() {
   const dollar = DCAStore((store) => store.dollarAmount);

@@ -1,9 +1,8 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import DCAModel from "./DCAModel";
-// import DCAChart from "./DCAChart";
 import DCAInputs from "./input-form/DCAInputs";
-import { DCAStore } from "@/app/(zustand)/store";
+import { DCAStore } from "./DCAStore";
 import dynamic from "next/dynamic";
 
 const DynamicDCAChart = dynamic(() => import("./DCAChart"), {
@@ -12,21 +11,26 @@ const DynamicDCAChart = dynamic(() => import("./DCAChart"), {
 
 export default function DCA() {
   const singlePath = DCAStore((store) => store.csvPath);
+  const rawData = DCAStore((store) => store.rawData);
   const dollarAmount = DCAStore((store) => store.dollarAmount);
   const date = DCAStore((state) => state.date);
   const model = new DCAModel();
 
-  // Run the model after page loads
+  // Save raw data after page loads
+  useEffect(() => {
+    model.init();
+  }, []);
+
   useEffect(() => {
     model.run();
-  }, []);
+  }, [rawData]);
 
   // Run the model if asset selected changes
   // Dependent on store.csvPath because
   // useEffect() has already run with store.assetSelected
   // in AssetSelector.jsx
   useEffect(() => {
-    model.run();
+    model.init();
   }, [singlePath]);
 
   // Re-run the model if the date changes

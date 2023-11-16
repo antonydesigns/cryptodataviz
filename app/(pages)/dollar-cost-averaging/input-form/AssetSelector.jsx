@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import { DCAStore } from "@/app/(zustand)/store";
+import { DCAStore } from "../DCAStore";
 
 export default function AssetSelector() {
   const assetSelected = DCAStore((store) => store.assetSelected);

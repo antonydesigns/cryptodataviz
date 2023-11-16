@@ -31,7 +31,7 @@
     "app/(pages)/dollar-cost-averaging/page.jsx",
     "app/(utils)/utils.js",
     "app/layout.jsx",
-    "app/(zustand)/store.js",
+    "app/(pages)/dollar-cost-averaging/store.js",
     "app/(pages)/(marketing)/(homepage)/page.jsx",
     "components/custom/Section.jsx"
   ],
