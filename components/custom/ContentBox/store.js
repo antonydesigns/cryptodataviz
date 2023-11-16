@@ -1,6 +1,9 @@
 import { create } from "zustand";
 
 export const ContentBoxStore = create((set) => ({
+  updateSignal: false,
+  setUpdateSignal: (updatedState) =>
+    set(() => ({ updateSignal: updatedState })),
   rawData: [],
   setRawData: (updatedState) => set(() => ({ rawData: updatedState })),
   content: [],

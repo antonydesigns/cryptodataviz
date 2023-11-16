@@ -20,10 +20,12 @@ export type ParsedPageContentType = {
   content: ParsedHTMLStringType;
   original: string;
   locationID: number;
+  order: number;
 };
 
 export type PageContentType = {
   id: string;
   content: string;
   locationID: number;
+  order: number;
 };
