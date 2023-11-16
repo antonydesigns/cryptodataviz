@@ -10,9 +10,17 @@ export default function DCAInputs() {
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="my-3 mx-3">
+      <form onSubmit={handleSubmit}>
+        <p className="my-2 text-[18px] font-semibold">1. Pick a crypto asset</p>
         <AssetSelector />
+        <p className="my-2 text-[18px] font-semibold">
+          2. Choose a starting date of investment{" "}
+        </p>
         <DateSelector />
+        <p className="my-2 text-[18px] font-semibold">
+          3. Decide on a weekly investment amount
+        </p>
+
         <InvestAmount />
       </form>
     </>

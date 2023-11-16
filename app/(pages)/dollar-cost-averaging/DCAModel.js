@@ -1,7 +1,7 @@
 "use client";
 
 import { csv } from "d3-fetch";
-import { DCAStore } from "@/app/(zustand)/store";
+import { DCAStore } from "./DCAStore";
 import { join } from "@/app/(utils)/utils";
 
 /**
@@ -17,11 +17,14 @@ import { join } from "@/app/(utils)/utils";
  */
 export default class DCAModel {
   constructor() {
-    this.rawData = [];
     this.dcaData = [];
+    this.filteredData = [];
 
     // global states and setters
     this.csvFilePath = DCAStore((store) => store.csvPath);
+
+    this.rawData = DCAStore((store) => store.rawData);
+    this.setRawData = DCAStore((store) => store.setRawData);
 
     this.buyDollarValue = DCAStore((store) => store.dollarAmount);
     this.dateInput = DCAStore((store) => store.date);
@@ -33,13 +36,27 @@ export default class DCAModel {
     this.setFinalDataLoaded = DCAStore((store) => store.setFinalDataLoaded);
   }
 
-  run() {
+  init() {
     (async () => {
       await this.getData();
-      this.calculateABP();
-      this.calculateFinalData();
-      this.setFinalDataLoaded(true);
     })();
+  }
+
+  run() {
+    this.filterData();
+    this.calculateABP();
+    this.calculateFinalData();
+    this.setFinalDataLoaded(true);
+  }
+
+  filterData() {
+    // Filter the data by starting date
+    let output = this.rawData;
+    output = output.filter((d) => {
+      return d.date > this.dateInput;
+    });
+
+    this.filteredData = output;
   }
 
   async getData() {
@@ -53,18 +70,13 @@ export default class DCAModel {
       d.date = new Date(d.date);
     });
 
-    // Filter the data by starting date
+    // Save data to global state
 
-    output = output.filter((d) => {
-      return d.date > this.dateInput;
-    });
-
-    this.rawData = output;
-    // console.log("DCAModel.js", output);
+    this.setRawData(output);
   }
 
   calculateABP() {
-    let history = this.rawData;
+    let history = this.filteredData;
     if (!history || history.length === 0) {
       return;
     }
@@ -101,7 +113,7 @@ export default class DCAModel {
 
   calculateFinalData() {
     let result = this.dcaData;
-    let data = this.rawData;
+    let data = this.filteredData;
 
     // Join DCA Dataset with existing dataset to complete Final Dataset
 

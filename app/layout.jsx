@@ -2,7 +2,7 @@ import "./globals.css";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Crypto Data Visualization | by Ant",
+  title: "Crypto Data Visualizations | by Ant",
   description: "Data-driven crypto investment strategies",
 };
 
@@ -26,12 +26,6 @@ export default function RootLayout({ children }) {
               className="underline hover:text-sky-800 font-semibold"
             >
               DCA Simulator
-            </Link>
-            <Link
-              href="/new-editor"
-              className="underline hover:text-sky-800 font-semibold"
-            >
-              New Editor
             </Link>
           </nav>
         </div>
