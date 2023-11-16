@@ -1,14 +1,11 @@
-import { db } from "@/app/(config)/firebase";
 import { ParsedPageContentType } from "@/app/(utils)/types";
-import { getDocs, collection } from "firebase/firestore";
-import { cache } from "react";
-import ContentBoxModel from "./model";
-import NewEditorComponent from "./component";
+import ContentBoxModel from "../../../components/custom/ContentBox/model";
 
 export const revalidate = 0; // revalidate the data at every request
 
 export default async function NewEditorPage() {
-  const model = new ContentBoxModel();
+  const locationID = 10;
+  const model = new ContentBoxModel(locationID);
   await model.init();
   const pageContent: ParsedPageContentType[] = await model.getContent();
 
@@ -19,15 +16,3 @@ export default async function NewEditorPage() {
     </>
   );
 }
-
-/* 
-const getItem = cache(async () => {
-  const data = await getDocs(collection(db, "pageContent"));
-  const pageContent: PageContentType[] = [];
-  data.forEach((doc) => {
-    const content = doc.data() as PageContentType;
-    let id = doc.id;
-    pageContent.push({ ...content, id: id });
-  });
-  return pageContent;
-}); */
