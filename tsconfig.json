@@ -33,7 +33,8 @@
     "app/layout.jsx",
     "app/(pages)/dollar-cost-averaging/store.js",
     "app/(pages)/(marketing)/(homepage)/page.jsx",
-    "components/custom/Section.jsx"
+    "components/custom/Section.jsx",
+    "app/(pages)/animate/scenes/store.js"
   ],
   "exclude": ["node_modules"]
 }
