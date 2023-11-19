@@ -20,8 +20,12 @@ export default function Home() {
 
   return (
     <>
-      <Section content={intro} />
-      <Section content={whatsAvailable} />
+      <div className="mt-5">
+        <Section content={intro} />
+      </div>
+      <div className="mt-5">
+        <Section content={whatsAvailable} />
+      </div>
     </>
   );
 }
