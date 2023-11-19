@@ -1,30 +1,27 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { SceneStore } from "./store";
-import SceneButtons from "./SceneButtons";
-import CompleteButton from "./CompleteButton";
+import SceneTemplate from "./SceneTemplate";
 
 export default function Scene5() {
-  const sceneNumber = SceneStore((store) => store.sceneNumber);
-
   const isComplete = SceneStore((store) => store.isComplete);
-  const setIsComplete = SceneStore((store) => store.setIsComplete);
-
-  const progressCounter = SceneStore((store) => store.progressCounter);
-
-  useEffect(() => {
-    if (progressCounter > sceneNumber) {
-      setIsComplete(true);
-    } else {
-      setIsComplete(false);
-    }
-  }, [sceneNumber]);
+  const textContent = {
+    heading: "",
+    body: [
+      `Here is how grimcoin works:`,
+      `Bob has a website with all the information about who owns how many grimcoins. Even though Bob is the creator of grimcoin, he doesn't have the authority to add transaction records and update balances. `,
+      `His website is only a window to see the <strong>grimcoin ledger</strong>.
+      `,
+    ],
+  };
 
   return (
     <>
-      <CompleteButton />
-      <SceneButtons complete={isComplete} />
+      <SceneTemplate
+        task={false}
+        textContent={textContent}
+        isComplete={isComplete}
+      ></SceneTemplate>
     </>
   );
 }

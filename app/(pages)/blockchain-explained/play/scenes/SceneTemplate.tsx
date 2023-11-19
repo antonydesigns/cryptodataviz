@@ -23,10 +23,12 @@ export default function SceneTemplate({
   isComplete: boolean;
 }) {
   const sceneNumber = SceneStore((store) => store.sceneNumber);
+  const setSceneNumber = SceneStore((store) => store.setSceneNumber);
   const setIsComplete = SceneStore((store) => store.setIsComplete);
 
   const scenes = SceneStore((store) => store.scenes);
   const progressCounter = SceneStore((store) => store.progressCounter);
+  const setProgressCounter = SceneStore((store) => store.setProgressCounter);
 
   useEffect(() => {
     if (progressCounter > sceneNumber) {
@@ -36,8 +38,18 @@ export default function SceneTemplate({
     }
   }, [sceneNumber]);
 
+  const jump = 5;
+
   return (
     <>
+      <button
+        onClick={() => {
+          setSceneNumber(jump - 1);
+          setProgressCounter(jump - 1);
+        }}
+      >
+        Jump to WIP Scene
+      </button>
       <div className="min-h-[69vh]">
         <div className="underline">
           <p>

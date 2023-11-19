@@ -3,13 +3,12 @@
 import { SceneStore } from "./store";
 import SceneTemplate from "./SceneTemplate";
 
-export default function Scene2() {
+export default function Scene11() {
   const isComplete = SceneStore((store) => store.isComplete);
   const textContent = {
     heading: "",
     body: [
-      `Despite this, the students have found a clever way to get around this rule. At first, they simply barter for goods. Cookies for cupcakes, Science homework for Math homework, etc.`,
-      `Later, they all agree that candy bars (unopened) have value. So, they started using candy bars as currency to sell each other goods and services. 
+      `To do so, they pick a random number. One Listener will be lucky. They will be the one to overwrite the notes of the other nine Listeners. In this way, the content of each Listener's ledger will be 100% identical.
       `,
     ],
   };

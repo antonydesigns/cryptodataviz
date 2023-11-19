@@ -34,7 +34,8 @@
     "app/(pages)/dollar-cost-averaging/store.js",
     "app/(pages)/(marketing)/(homepage)/page.jsx",
     "components/custom/Section.jsx",
-    "app/(pages)/animate/scenes/store.js"
+    "app/(pages)/animate/scenes/store.js",
+    "app/(pages)/blockchain-explained/play/scenes/scene9tsx"
   ],
   "exclude": ["node_modules"]
 }
