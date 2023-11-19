@@ -38,7 +38,7 @@ export default function SceneTemplate({
     }
   }, [sceneNumber]);
 
-  const jump = 5;
+  const jump = 19;
 
   return (
     <>
