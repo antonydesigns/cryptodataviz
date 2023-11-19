@@ -8,9 +8,9 @@ export default function Scene6() {
   const textContent = {
     heading: "",
     body: [
-      `Bob assembled 10 volunteers who are referred to as <strong>Listeners</strong>. 
+      `Bob then assembles 10 volunteers who are referred to as <strong>Listeners</strong>. 
       `,
-      `Each Listener has their own copy of the grimcoin ledger, and each can only edit their own copy. `,
+      `Each Listener has their own copy of the grimcoin ledger, and each can only <strong>edit their own copy.</strong> `,
     ],
   };
 

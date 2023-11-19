@@ -6,7 +6,7 @@ import SceneTemplate from "./SceneTemplate";
 export default function Scene3() {
   const isComplete = SceneStore((store) => store.isComplete);
   const textContent = {
-    heading: "",
+    heading: "A currency is banned...",
     body: [
       `Unfortunately, they encounter two problems:`,
       `<strong>First problem</strong>: Candy bars that are broken, torn, or nearly expired don't have value. This type of currency doesn't make for a good long-term store of value. 

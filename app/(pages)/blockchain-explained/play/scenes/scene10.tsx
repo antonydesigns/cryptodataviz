@@ -6,9 +6,9 @@ import SceneTemplate from "./SceneTemplate";
 export default function Scene10() {
   const isComplete = SceneStore((store) => store.isComplete);
   const textContent = {
-    heading: "",
+    heading: "Backing up data",
     body: [
-      `The Listeners must decide whose note they will use for today's collection, to be added on top of past transactions on the grimcoin ledger.
+      `The Listeners must decide whose note they will use from today's collection, to be added on top of past transactions on the grimcoin ledger.
       `,
     ],
   };

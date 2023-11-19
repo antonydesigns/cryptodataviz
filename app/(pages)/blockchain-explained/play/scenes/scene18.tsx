@@ -10,9 +10,9 @@ export default function Scene18() {
     body: [
       `The consensus protocol is one of the key things that make blockchains secure and valuable. 
       `,
-      `Even <strong>without an official authority</strong> (e.g. from a government) to oversee operations, validators (who are strangers to each other) could work together without ever needing to trust each other. 
+      `Even <strong>without an official authority</strong> (e.g. from a government) to oversee operations, validators (who are often strangers to each other) could work together without ever needing to trust one other. 
       `,
-      `Because what keeps the network's integrity are <strong>strict computer programs</strong> that should benefit everyone if the protocols are followed properly.
+      `Because what keeps the network's integrity are <strong>strict computer programs</strong> that should benefit everyone if the protocols are being followed properly.
       `,
     ],
   };

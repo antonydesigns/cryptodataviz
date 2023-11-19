@@ -6,7 +6,7 @@ import SceneTemplate from "./SceneTemplate";
 export default function Scene4() {
   const isComplete = SceneStore((store) => store.isComplete);
   const textContent = {
-    heading: "",
+    heading: "The need for a new currency",
     body: [
       `Bob, a smart kid who knows about computers, proposes a plan. 
       `,
