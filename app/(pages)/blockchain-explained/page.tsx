@@ -1,8 +1,6 @@
 "use client";
 
 import Section from "@/components/custom/Section";
-import SceneButtons from "./play/scenes/SceneButtons";
-import Link from "next/link";
 import LinkToFirstScene from "./play/scenes/LinkToFirstScene";
 
 export default function BlockchainExplained() {
@@ -12,7 +10,7 @@ export default function BlockchainExplained() {
       `To understand why Bitcoin and other cryptocurrencies have value, you need to understand <strong>blockchain</strong>.
     `,
       `But what the heck is it? In this interactive visual guide, you'll learn what blockchain is, how it works, and why it is a valuable piece of technology.`,
-      `Click <strong>Next</strong> as you progress through the scenario. If you ever want to back to the previous scenes, just click on <strong>Back</strong>.`,
+      `Click <strong>Next</strong> as you progress through the course. If you ever want to back to the previous scenes, just click on <strong>Back</strong>.`,
     ],
   };
 
