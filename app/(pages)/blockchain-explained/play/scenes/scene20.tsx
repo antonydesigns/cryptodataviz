@@ -3,7 +3,7 @@
 import { SceneStore } from "./store";
 import SceneTemplate from "./SceneTemplate";
 
-export default function Scene10() {
+export default function Scene20() {
   const isComplete = SceneStore((store) => store.isComplete);
   const textContent = {
     heading: "",

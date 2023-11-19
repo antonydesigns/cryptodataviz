@@ -12,6 +12,13 @@ import Scene10 from "./scene10";
 import Scene11 from "./scene11";
 import Scene12 from "./scene12";
 import Scene13 from "./scene13";
+import Scene14 from "./scene14";
+import Scene15 from "./scene15";
+import Scene16 from "./scene16";
+import Scene17 from "./scene17";
+import Scene18 from "./scene18";
+import Scene19 from "./scene19";
+import Scene20 from "./scene20";
 
 export const SceneStore = create((set) => ({
   sceneNumber: 0,
@@ -37,5 +44,12 @@ export const SceneStore = create((set) => ({
     { id: 4, title: "Something", content: <Scene11 /> },
     { id: 4, title: "Something", content: <Scene12 /> },
     { id: 4, title: "Something", content: <Scene13 /> },
+    { id: 4, title: "Something", content: <Scene14 /> },
+    { id: 4, title: "Something", content: <Scene15 /> },
+    { id: 4, title: "Something", content: <Scene16 /> },
+    { id: 4, title: "Something", content: <Scene17 /> },
+    { id: 4, title: "Something", content: <Scene18 /> },
+    { id: 4, title: "Something", content: <Scene19 /> },
+    { id: 4, title: "Something", content: <Scene20 /> },
   ],
 }));
