@@ -23,6 +23,11 @@ export default function BlockchainExplainedPage() {
   return (
     <>
       <Section content={index["intro"]} />
+      <>
+        <div className="figure you">
+          <div className="">You</div>
+        </div>
+      </>
     </>
   );
 }
