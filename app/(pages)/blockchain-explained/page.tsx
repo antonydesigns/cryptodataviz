@@ -1,8 +1,10 @@
 "use client";
 
 import Section from "@/components/custom/Section";
-import React from "react";
+import React, { useRef, useEffect, useState } from "react";
 import GuideContent from "./GuideContent";
+import Box from "./Box";
+import AnotherBox from "./Box2";
 
 type ContentIndexType = {
   [key: string]: {
@@ -23,11 +25,9 @@ export default function BlockchainExplainedPage() {
   return (
     <>
       <Section content={index["intro"]} />
-      <>
-        <div className="figure you">
-          <div className="">You</div>
-        </div>
-      </>
+      <div className="border border-black h-[500px] w-full relative">
+        <AnotherBox />
+      </div>
     </>
   );
 }
