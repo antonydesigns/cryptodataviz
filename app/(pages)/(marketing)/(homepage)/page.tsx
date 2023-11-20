@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <>
       <Section content={intro} />
-      <Section content={whatsAvailable} />
+      <Section content={whatsAvailable} className="mt-5" />
     </>
   );
 }

@@ -32,8 +32,8 @@
     "app/(utils)/utils.js",
     "app/layout.jsx",
     "app/(pages)/dollar-cost-averaging/store.js",
-    "app/(pages)/(marketing)/(homepage)/page.jsx",
-    "components/custom/Section.jsx"
+    "app/(pages)/(marketing)/(homepage)/page.tsx",
+    "components/custom/Section.tsx"
   ],
   "exclude": ["node_modules"]
 }

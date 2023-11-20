@@ -27,6 +27,12 @@ export default function RootLayout({ children }) {
             >
               DCA Simulator
             </Link>
+            <Link
+              href="/blockchain-explained"
+              className="underline hover:text-sky-800 font-semibold"
+            >
+              Blockchains Explained
+            </Link>
           </nav>
         </div>
 
