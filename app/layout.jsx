@@ -27,6 +27,12 @@ export default function RootLayout({ children }) {
             >
               DCA Simulator
             </Link>
+            <Link
+              href="/motion"
+              className="underline hover:text-sky-800 font-semibold"
+            >
+              Motion
+            </Link>
           </nav>
         </div>
 
