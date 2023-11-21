@@ -20,7 +20,9 @@ export default function Scene1() {
         task={false}
         textContent={textContent}
         isComplete={isComplete}
-      ></SceneTemplate>
+      >
+        <div className="interaction h-[60vh]"></div>
+      </SceneTemplate>
     </>
   );
 }
