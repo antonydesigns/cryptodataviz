@@ -65,7 +65,9 @@ export default function SceneTemplate({
         </div>
         {children}
       </div>
-      <SceneButtons complete={isComplete} />
+      <div className="mt-4">
+        <SceneButtons complete={isComplete} />
+      </div>
       Progress: {progressCounter + 1} of {scenes.length}
       {task && <CompleteButton />}
     </>

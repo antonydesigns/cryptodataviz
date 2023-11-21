@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { SceneStore } from "./store";
 import SceneTemplate from "./SceneTemplate";
+import SVG_Scene1 from "../SVGs/scene1";
 
 export default function Scene1() {
   const isComplete = SceneStore((store) => store.isComplete);
@@ -21,7 +22,9 @@ export default function Scene1() {
         textContent={textContent}
         isComplete={isComplete}
       >
-        <div className="interaction h-[60vh]"></div>
+        <div className="interaction w-[100%] mt-5">
+          <SVG_Scene1 />
+        </div>
       </SceneTemplate>
     </>
   );
