@@ -2,6 +2,7 @@
 
 import { SceneStore } from "./store";
 import SceneTemplate from "./SceneTemplate";
+import SVG_Scene3 from "../SVGs/scene3";
 
 export default function Scene3() {
   const isComplete = SceneStore((store) => store.isComplete);
@@ -22,7 +23,9 @@ export default function Scene3() {
         task={false}
         textContent={textContent}
         isComplete={isComplete}
-      ></SceneTemplate>
+      >
+        <SVG_Scene3 />
+      </SceneTemplate>
     </>
   );
 }

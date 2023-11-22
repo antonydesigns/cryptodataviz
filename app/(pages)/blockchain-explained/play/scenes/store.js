@@ -21,7 +21,7 @@ import Scene19 from "./scene19";
 import Scene20 from "./scene20";
 
 export const SceneStore = create((set) => ({
-  sceneNumber: 0,
+  sceneNumber: 3,
   setSceneNumber: (update) => set(() => ({ sceneNumber: update })),
 
   isComplete: 0,
