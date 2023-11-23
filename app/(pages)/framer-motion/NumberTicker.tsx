@@ -9,7 +9,7 @@ import {
   useMotionValue,
 } from "framer-motion";
 
-export default function FramerMotionPage() {
+export default function NumberTicker() {
   const [count, setCount] = useState(0);
   const array = [];
   for (let i = 0; i < 10; i++) {
