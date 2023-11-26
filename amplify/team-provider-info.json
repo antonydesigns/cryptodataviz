@@ -10,6 +10,14 @@
       "StackName": "amplify-cryptodataviz-dev-170144",
       "StackId": "arn:aws:cloudformation:ap-southeast-2:307992478083:stack/amplify-cryptodataviz-dev-170144/6fedeec0-8c3a-11ee-b03e-06b783fe354d",
       "AmplifyAppId": "dxjl1de780hqb"
+    },
+    "categories": {
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "dxjl1de780hqb",
+          "type": "cicd"
+        }
+      }
     }
   }
 }
