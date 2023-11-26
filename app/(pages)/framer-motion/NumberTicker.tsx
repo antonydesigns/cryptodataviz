@@ -1,6 +1,6 @@
-"use client";
+// "use client";
 
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import {
   MotionValue,
   motion,
@@ -10,30 +10,30 @@ import {
 } from "framer-motion";
 
 export default function NumberTicker() {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
   const array = [];
   for (let i = 0; i < 10; i++) {
     array.push(i);
   }
 
-  const animatedValue = useSpring(count);
+  const animatedValue = useSpring(0);
 
-  useEffect(() => {
+  /*   useEffect(() => {
     animatedValue.set(count);
-  }, [animatedValue, count]);
+  }, [animatedValue, count]); */
 
   return (
     <>
       <div className="flex justify-between items-center">
         <div className="controls">
           <button
-            onClick={() => setCount(count + 1)}
+            onClick={() => {} /* setCount(count + 1) */}
             className="py-2 px-3 ring-1 ring-black rounded-md mr-3 bg-green-200"
           >
-            Change count: {count}
+            Change count: {/* count */}
           </button>
           <button
-            onClick={() => setCount(0)}
+            onClick={() => {} /* setCount(0) */}
             className="py-2 px-3 ring-1 ring-black rounded-md mr-3 bg-red-200"
           >
             Reset
@@ -46,6 +46,16 @@ export default function NumberTicker() {
             ))}
         </div>
       </div>
+      <motion.div
+        className="bg-green-300 w-[100px] h-[100px] mt-[100px] rounded-[50%]"
+        initial={{ rotate: 45 }}
+        whileTap={{ rotate: 360 }}
+        transition={{ duration: 1, type: "inertia", velocity: 10000 }}
+      >
+        <div className="w-[10px] h-[10px] bg-black rounded-[50%]"></div>
+      </motion.div>
+      <div className="mt-[100px]"></div>
+      <List />
     </>
   );
 }
@@ -76,5 +86,26 @@ function Number({ number, mv }: { number: number; mv: MotionValue }) {
         {number}
       </motion.span>
     </>
+  );
+}
+
+import { Reorder } from "framer-motion";
+import { useEffect, useState } from "react";
+
+function List() {
+  const [items, setItems] = useState([0, 1, 2, 3]);
+
+  useEffect(() => {
+    console.log(items);
+  }, [items]);
+
+  return (
+    <Reorder.Group axis="y" values={items} onReorder={setItems}>
+      {items.map((item) => (
+        <Reorder.Item key={item} value={item}>
+          <p className="bg-sky-200 w-[100px] py-1 my-2 text-center">{item}</p>
+        </Reorder.Item>
+      ))}
+    </Reorder.Group>
   );
 }
