@@ -1,5 +1,3 @@
-"use client";
-
 import Section from "@/components/custom/Section";
 import LinkToFirstScene from "./play/scenes/LinkToFirstScene";
 
