@@ -1,9 +1,5 @@
 import "./globals.css";
 import Link from "next/link";
-import { Amplify } from "aws-amplify";
-import awsConfig from "@/src/aws-exports";
-
-Amplify.configure(awsConfig);
 
 export const metadata = {
   title: "Crypto Data Visualizations | by Ant",
